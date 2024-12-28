@@ -1,0 +1,16 @@
+Requirements:
+1. fill out the form to simulate booking process
+2. Ex queries to handle (Services offered, loc/addr, hrs of operation):
+    - “Can I book a hair cut for tomorrow” (the LLM should be aware what date is tomorrow)
+    - “How much is a full color haircut with short hair?”
+    - “What time do you open on Tuesday?”
+
+Tasks:
+1. setup websocket server
+2. integrate LLM
+3. dockerize app
+
+
+
+
+
