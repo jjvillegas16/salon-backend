@@ -13,6 +13,7 @@ import rateLimiter from "@/common/middleware/rateLimiter";
 import requestLogger from "@/common/middleware/requestLogger";
 import { env } from "@/common/utils/envConfig";
 import { PhoneAgentWebSocketHandler } from "./api/phoneAgentWebSocket/phoneAgentWebsocketHandler";
+import { webCallRouter } from "./api/webCall/webCallRouter";
 import { DummyClient } from "./common/llms/dummyClient";
 import { OpenAIClient } from "./common/llms/openAiClient";
 
@@ -48,6 +49,7 @@ app.ws("/llm-websocket/:call_id", async (webSocket: WebSocket, request: Request)
 // Routes
 app.use("/health-check", healthCheckRouter);
 app.use("/users", userRouter);
+app.use("/web-calls", webCallRouter);
 
 // Swagger UI
 app.use(openAPIRouter);

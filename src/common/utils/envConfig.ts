@@ -13,4 +13,6 @@ export const env = cleanEnv(process.env, {
   OPENAI_API_KEY: str(),
   OPENAI_ORGANIZATION_ID: str(),
   OPENAI_LLM_MODEL: str({ default: "gpt-4o-mini" }),
+  RETELL_API_KEY: str(),
+  RETELL_AGENT_ID: str(),
 });
