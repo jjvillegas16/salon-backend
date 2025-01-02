@@ -76,6 +76,7 @@ export class PhoneAgentWebSocketHandler {
       console.clear();
       llmClient.draftResponse(request, this.send);
     } else if (request.interaction_type === "ping_pong") {
+      // send back ping_pong to keep current connection alive
       const pingpongResponse: CustomLlmResponse = {
         response_type: "ping_pong",
         timestamp: request.timestamp,
