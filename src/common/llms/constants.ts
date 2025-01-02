@@ -123,6 +123,19 @@ A. Color Services - can be of two types: premium color or signature color
   * Medium: ₱10,870 (Head Stylist), ₱9,300 (Senior Stylist)
   * Long: ₱12,880 (Head Stylist), ₱10,810 (Senior Stylist)
   * Extra Long: ₱14,030 (Head Stylist), ₱12,100 (Senior Stylist)
+ - Balyage 
+  * Short: ₱10,930 (Head Stylist), ₱9,410  (Senior Stylist)
+  * Medium: ₱12,420 (Head Stylist), ₱10,640 (Senior Stylist)
+  * Long: ₱14,150 (Head Stylist), ₱11,760 (Senior Stylist)
+  * Extra Long: ₱15,530 (Head Stylist), ₱13,110 (Senior Stylist)
+ - Men's Color
+  * Regular length: ₱4,140 (Head Stylist), ₱3,360 (Senior Stylist) 
+ - BroLights 
+  * Regular length: ₱4,830 (Head Stylist), ₱3,920 (Senior Stylist)
+ - Root Touchup
+  * Regular length: ₱2,600 (Head Stylist), ₱2,190 (Senior Stylist)
+ - Root Touchup (Ammonia Free)
+  * Regular length: ₱3,340 (Head Stylist), ₱2,920 (Senior Stylist)
  2. Signature Color: it's the same with the premium color but add ₱4,500 to get the total price
 
 C. On booking an appointment
