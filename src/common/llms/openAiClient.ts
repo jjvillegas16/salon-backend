@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { env } from "../utils/envConfig";
 import { agentGreetingMsg, agentPrompt } from "./constants";
 import type { LlmClientInterface } from "./llmClientInterface";
 import type {
@@ -14,8 +15,8 @@ export class OpenAIClient implements LlmClientInterface {
 
   constructor() {
     this.client = new OpenAI({
-      apiKey: process.env.OPENAI_APIKEY,
-      organization: process.env.OPENAI_ORGANIZATION_ID,
+      apiKey: env.OPENAI_API_KEY,
+      organization: env.OPENAI_ORGANIZATION_ID,
     });
   }
 
