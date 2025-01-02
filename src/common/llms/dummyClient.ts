@@ -1,49 +1,31 @@
 import type { WebSocket } from "ws";
 import type { LlmClientInterface } from "./llmClientInterface";
-import type { ReminderRequiredRequest, ResponseRequiredRequest } from "./types";
-
-interface Utterance {
-  role: "agent" | "user";
-  content: string;
-}
-
-// LLM Websocket Request Object
-export interface RetellRequest {
-  response_id?: number;
-  transcript: Utterance[];
-  interaction_type: "update_only" | "response_required" | "reminder_required";
-}
-
-// LLM Websocket Response Object
-export interface RetellResponse {
-  response_id?: number;
-  content: string;
-  content_complete: boolean;
-  end_call: boolean;
-}
+import type { CustomLlmResponse, ReminderRequiredRequest, ResponseRequiredRequest, RetellResponse } from "./types";
 
 export class DummyClient implements LlmClientInterface {
-  // constructor() {}
-
-  getBeginMessage() {
-    const res: RetellResponse = {
+  getBeginMessage(): RetellResponse {
+    const response: RetellResponse = {
       response_id: 0,
       content: "How may I help you?",
       content_complete: true,
       end_call: false,
     };
-    return JSON.stringify(res);
+    return response;
   }
 
-  async draftResponse(request: ResponseRequiredRequest | ReminderRequiredRequest) {
+  async draftResponse(
+    request: ResponseRequiredRequest | ReminderRequiredRequest,
+    onFinish: (response: CustomLlmResponse) => void,
+  ) {
     try {
-      const res: RetellResponse = {
+      const response: CustomLlmResponse = {
+        response_type: "response",
         response_id: request.response_id,
         content: "I am sorry, can you say that again?",
-        content_complete: true,
+        content_complete: false,
         end_call: false,
       };
-      return JSON.stringify(res);
+      onFinish(response);
     } catch (err) {
       console.error("Error in gpt stream: ", err);
       throw err;

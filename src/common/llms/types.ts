@@ -1,4 +1,4 @@
-// source: https://github.com/RetellAI/retell-custom-llm-node-demo/blob/main/src/types.ts
+// most types are sourced from here: https://github.com/RetellAI/retell-custom-llm-node-demo/blob/main/src/types.ts
 
 export interface Utterance {
   role: "agent" | "user" | "system";
@@ -102,4 +102,19 @@ export interface FunctionCall {
   funcName: string;
   arguments: Record<string, any>;
   result?: string;
+}
+
+// LLM Websocket Request Object
+export interface RetellRequest {
+  response_id?: number;
+  transcript: Utterance[];
+  interaction_type: "update_only" | "response_required" | "reminder_required";
+}
+
+// LLM Websocket Response Object
+export interface RetellResponse {
+  response_id?: number;
+  content: string;
+  content_complete: boolean;
+  end_call: boolean;
 }

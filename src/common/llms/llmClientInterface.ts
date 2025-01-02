@@ -1,7 +1,9 @@
-import type { RetellRequest } from "./dummyClient";
-import type { ReminderRequiredRequest, ResponseRequiredRequest } from "./types";
+import type { CustomLlmResponse, ReminderRequiredRequest, ResponseRequiredRequest, RetellResponse } from "./types";
 
 export interface LlmClientInterface {
-  getBeginMessage(): string;
-  draftResponse(request: ResponseRequiredRequest | ReminderRequiredRequest): Promise<string>;
+  getBeginMessage(): RetellResponse;
+  draftResponse(
+    request: ResponseRequiredRequest | ReminderRequiredRequest,
+    onFinish: (response: CustomLlmResponse) => void,
+  ): Promise<void>;
 }
